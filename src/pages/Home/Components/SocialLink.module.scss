@@ -1,0 +1,59 @@
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+.cIcon {
+	width:  20px;
+	height: 20px;
+	fill: currentColor;
+	transition: .2s;
+}
+
+.cLinkBrand:hover  { color: #000 }
+.cLinkBrand:hover::after  { background: #000 }
+
+.cLink {
+	position: relative;
+	color: #bbb;
+}
+
+.cLink:not(:last-of-type) {
+	margin-right: 15px;
+}
+
+.cTooltip::before,
+.cTooltip::after {
+	display: block;
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%, -10px);
+	opacity: 0;
+	transition: .2s;
+}
+
+.cTooltip::before {
+	content: '';
+	top: calc(100% + 2px);
+	border: solid 5px transparent;
+	border-bottom-color: currentColor;
+}
+
+.cTooltip::after {
+	content: attr(aria-label);
+	top: calc(100% + 12px);
+	padding: .70em .93em;
+	font-size: .800rem;
+	color: white;
+	border-radius: 3px;
+}
+
+.cTooltip:hover::before,
+.cTooltip:hover::after {
+	opacity: 1;
+	transform: translate(-50%);
+}
+
+.tool {
+	display: none
+}

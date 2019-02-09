@@ -1,0 +1,136 @@
+.pageHeader {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 50px 24px 0;
+}
+
+.avatar {
+
+}
+
+.blogName {
+	color:#ffa7c4;
+	font-family: 'Montserrat', sans-serif;
+	cursor: pointer;
+  font-weight: 900;
+  font-size: 2.5rem;
+}
+ 
+.title {
+  font-family: 'Merriweather','Georgia',serif;
+  font-size: 0.8rem;
+}
+
+.subTitle {
+  font-size: 0.8rem;
+  font-weight: lighter;
+  color: #aaa;
+  font-family: 'Merriweather','Georgia',serif;
+  line-height: 0.5;
+}
+
+.links {
+  margin: 30px;
+}
+
+.navContainer {
+  text-align: center;
+  display: block;
+}
+
+.navSpace {
+  padding: 0 13px 0;
+}
+
+.navItems {
+  font-size: 1rem;
+  padding: 7px 15px;
+  margin: 0;
+  border-radius: 4%;
+  width: 70px;
+  line-height: 2.4rem;
+  font-weight: 300;
+  color:#d23669;
+  font-family: 'Merriweather','Georgia',serif;
+}
+
+.button{
+	width:35px;
+	height:35px;
+	border: #727172 12px solid;
+	border-radius:35px;
+	margin:0 auto;
+	position:relative;
+	-webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.button:hover{
+	width:35px;
+	height:35px;
+	border:grey 1px solid;
+	-webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+  position:relative;
+}
+
+.footer {
+	bottom:0;
+  left:0;
+  right: 0;
+	position:fixed;
+  width: 100%;
+  justify-content: center;
+  height: 2em;
+  overflow:hidden;
+  align-items: center;
+	-webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+  z-index:999;
+
+}
+
+.footer:hover {
+	-webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    height: 100%;
+}
+
+.container{
+  height:100%;
+  position:relative;
+  border:white 1px solid;
+  overflow-y: scroll;
+  background-color: white;
+}
+
+.cont{
+  position:relative;
+  border:pink 1px solid;
+  max-width: 40%;
+  // left: 25%;
+}
+
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .cont{
+    background-color: white;
+    width: 90%;
+    left: 5%;
+  }
+}
