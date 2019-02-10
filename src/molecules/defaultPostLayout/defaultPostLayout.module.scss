@@ -30,6 +30,7 @@
 	width: 60%;
 	// border: green 1px solid;
 	display: flex;
+	margin-bottom: 25%;
 }
 
 .footerLeftContainer {
@@ -47,13 +48,6 @@
 
 .footerTopTextStyle {
 	font-family: 'Merriweather','Georgia',serif;
-}
-
-.blogName {
-	color:#ffa7c4;
-	font-family: 'Montserrat', sans-serif;
-	cursor: pointer;
-	font-weight: 900;
 }
 
 .link {
@@ -75,26 +69,20 @@
 	flex-direction: column;
 	cursor: pointer;
 
-	.titleContainer{
-		// border: green 1px solid;
-		width: 100%;
-			> h2 {
-				color:#d23669;
-				font-family: 'Montserrat', sans-serif;
-				font-weight: 900;
-				font-size: 2.5rem;
-			}
-	}
+.titleContainer{
+	// border: green 1px solid;
+	width: 100%;
+}
 	
-	.dateContainer{
-		// border: blue 1px solid;
-		width: 100%;
-		font-family: 'Merriweather','Georgia',serif;
-	}
+.dateContainer{
+	// border: blue 1px solid;
+	width: 100%;
+	font-family: 'Merriweather','Georgia',serif;
+}
 
-	.bottomHalfContainer {
-		// border: pink 1px solid;
-		> p{
+.bottomHalfContainer {
+	// border: pink 1px solid;
+	> p{
 			color:black;
 			font-family: 'Merriweather','Georgia',serif;
 			font-weight: 400;
@@ -139,35 +127,29 @@
 		cursor: pointer;
 		padding: 5px;
 
-			.titleContainer{
-				// border: green 1px solid;
-				width: 100%;
-					> h2 {
-						color:#d23669;
-						font-family: 'Montserrat', sans-serif;
-						font-weight: 900;
-						font-size: 2.5rem;
-					}
-			}
-			
-			.dateContainer{
-				// border: blue 1px solid;
-				width: 100%;
-				font-family: 'Merriweather','Georgia',serif;
-				font-size: 14px;
-			}
+	.titleContainer{
+		// border: green 1px solid;
+		width: 100%;
+	}
+	
+	.dateContainer{
+		// border: blue 1px solid;
+		width: 100%;
+		font-family: 'Merriweather','Georgia',serif;
+		font-size: 14px;
+	}
 
-			.bottomHalfContainer {
-				// border: pink 1px solid;
-				> p{
-					color:black;
-					font-family: 'Merriweather','Georgia',serif;
-					font-weight: 400;
-					font-size: 14px;
-				}
+	.bottomHalfContainer {
+	// border: pink 1px solid;
+		> p{
+				color:black;
+				font-family: 'Merriweather','Georgia',serif;
+				font-weight: 400;
+				font-size: 14px;
 			}
 		}
 	}
+}
 
 
 @media only screen and (max-width: 1280px) {
@@ -191,32 +173,26 @@
 		cursor: pointer;
 		margin: 10px;
 	
-			.titleContainer{
-				// border: green 1px solid;
-				width: 100%;
-					> h2 {
-						color:#d23669;
-						font-family: 'Montserrat', sans-serif;
-						font-weight: 900;
-						font-size: 2.5rem;
-					}
-			}
-			
-			.dateContainer{
-				// border: blue 1px solid;
-				width: 100%;
-				font-family: 'Merriweather','Georgia',serif;
-				font-size: 14px;
-			}
+	.titleContainer{
+		// border: green 1px solid;
+		width: 100%;
+	}
+	
+	.dateContainer{
+		// border: blue 1px solid;
+		width: 100%;
+		font-family: 'Merriweather','Georgia',serif;
+		font-size: 14px;
+	}
 
-			.bottomHalfContainer {
-				// border: pink 1px solid;
-				> p{
-					color:black;
-					font-family: 'Merriweather','Georgia',serif;
-					font-weight: 400;
-					font-size: 14px;
-				}
+	.bottomHalfContainer {
+		// border: pink 1px solid;
+		> p{
+				color:black;
+				font-family: 'Merriweather','Georgia',serif;
+				font-weight: 400;
+				font-size: 14px;
 			}
 		}
 	}
+}

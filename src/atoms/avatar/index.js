@@ -7,7 +7,6 @@ const StyledImage = styled.img`
 `
 
 const Avatar = props => {
-  console.log(props.size,"props.size")
 	return (
 		<AvatarElement onClick={props.onClickImage} {...props}>
 			<StyledImage

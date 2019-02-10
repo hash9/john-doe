@@ -9,14 +9,6 @@
 .avatar {
 
 }
-
-.blogName {
-	color:#ffa7c4;
-	font-family: 'Montserrat', sans-serif;
-	cursor: pointer;
-  font-weight: 900;
-  font-size: 2.5rem;
-}
  
 .title {
   font-family: 'Merriweather','Georgia',serif;
@@ -120,17 +112,16 @@
 
 .cont{
   position:relative;
-  border:pink 1px solid;
-  max-width: 40%;
-  // left: 25%;
+  // border:pink 1px solid;
+  width: 40%;
+  left: 30%;
 }
 
-
-@media only screen and (max-width: 768px) {
-  /* For mobile phones: */
+@media only screen and (max-width: 768px) { 
   .cont{
-    background-color: white;
-    width: 90%;
-    left: 5%;
+  position:relative;
+  // border:pink 1px solid;
+  width: 95%;
+  left: 2%;
   }
 }

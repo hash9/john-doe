@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Avatar from '../../atoms/avatar';
+import HeaderM from '../../atoms/headerM';
 import styles from './listItemComponent.module.scss';
 
 const ListItemComponent = ({
@@ -17,7 +18,7 @@ const ListItemComponent = ({
 
 				<div className={styles.rightContainer}>
 					<div className={styles.titleContainer}>
-						<h2>{item.title}</h2>
+						<HeaderM text={item.title} />
 					</div>
 
 					<div className={styles.dateContainer}>

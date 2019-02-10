@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Page from '../pageComponent/PageComponent';
 import Avatar from '../../atoms/avatar';
+import Seperator from '../../atoms/seperator';
+import HeaderR from '../../atoms/headerR';
+import HeaderXL from '../../atoms/headerXL';
+import Anchor from '../../atoms/anchor';
 import styles from './defaultPostLayout.module.scss';
 
 const mobileQuery = window.matchMedia( "(max-width: 768px)" );
@@ -34,7 +38,7 @@ class DefaultPostLayout extends Component {
 			<Page>
 				<Page.Header className={styles.dPageHeader}>
 					<header>
-						<h2 className={styles.blogName} onClick={handleBlogName}>SpaceH</h2>
+						<HeaderR text={'SpaceH'} onClick={handleBlogName} />
 					</header>
 				</Page.Header>
 				<Page.Body className={styles.dPageBody}>
@@ -45,7 +49,7 @@ class DefaultPostLayout extends Component {
 								<div className={styles.mainContainer}>
 
 									<div className={styles.titleContainer}>
-										<h2>{postTitle}</h2>
+										<HeaderXL text={postTitle} />
 									</div>
 	
 									<div className={styles.dateContainer}>
@@ -64,7 +68,9 @@ class DefaultPostLayout extends Component {
 				</Page.Body>
 				<Page.Footer className={styles.dPageFooter}>
 					<footer>
-							<h2 className={styles.blogName} onClick={handleBlogName}>SpaceH</h2>
+						<Seperator />
+
+							<HeaderR text={'SpaceH'} onClick={handleBlogName} />
 							<div className={styles.footerMainContainer}>
 		
 								<div className={styles.footerLeftContainer}>
@@ -74,7 +80,7 @@ class DefaultPostLayout extends Component {
 								<div className={styles.footerRightContainer}>
 									<div className={styles.footerTopTextStyle}>
 										<p>
-											Personal Blog by <a className={styles.link} href="">Harshit Prajapati</a>
+											Personal Blog by <Anchor href={''} text={'Harshit Prajapati'} />
 										</p>
 										<p>Blog in progress</p>
 									</div>

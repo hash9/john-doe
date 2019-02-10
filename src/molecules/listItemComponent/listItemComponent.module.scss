@@ -25,12 +25,6 @@
 			.titleContainer{
 				// border: green 1px solid;
 				width: 100%;
-					> h2 {
-						color:#d23669;
-						font-family: 'Montserrat', sans-serif;
-						font-size: 1.75rem;
-						font-weight: 900
-					}
 			}
 			
 			.dateContainer{
@@ -60,55 +54,48 @@
 		// border: green 1px solid;
 		display: flex;
 	
-			.leftContainer {
-				width: 20%;
-				// border: yellow 1px solid;
-				flex: 0.15;
-				padding-left: 1px;
-				padding-top: 25px;
-				padding-right: 10px;
+		.leftContainer {
+			width: 20%;
+			// border: yellow 1px solid;
+			flex: 0.15;
+			padding-left: 1px;
+			padding-top: 25px;
+			padding-right: 10px;
+		}
+
+		.rightContainer {
+			width: 80%;
+			flex: 0.85;
+			margin-bottom: 5%;
+			// border: orange 1px solid;
+			display: flex;
+			flex-direction: column;
+			cursor: pointer;
+			margin: 10px;
+
+			.titleContainer{
+				// border: green 1px solid;
+				width: 100%;
 			}
-	
-			.rightContainer {
-				width: 80%;
-				flex: 0.85;
-				margin-bottom: 5%;
-				// border: orange 1px solid;
-				display: flex;
-				flex-direction: column;
-				cursor: pointer;
-				margin: 10px;
-	
-				.titleContainer{
-					// border: green 1px solid;
-					width: 100%;
-						> h2 {
-							color:#d23669;
-							font-family: 'Montserrat', sans-serif;
-							font-size: 1.75rem;
-							font-weight: 900;
-						}
-				}
-				
-				.dateContainer{
-					// border: blue 1px solid;
-					width: 100%;
+			
+			.dateContainer{
+				// border: blue 1px solid;
+				width: 100%;
+				font-family: 'Merriweather','Georgia',serif;
+				font-size: 14px;
+			}
+
+			.bottomHalfContainer {
+				// border: pink 1px solid;
+				> p{
+					color:black;
 					font-family: 'Merriweather','Georgia',serif;
+					font-weight: 400;
 					font-size: 14px;
 				}
-	
-				.bottomHalfContainer {
-					// border: pink 1px solid;
-					> p{
-						color:black;
-						font-family: 'Merriweather','Georgia',serif;
-						font-weight: 400;
-						font-size: 14px;
-					}
-				}
+			}
 		}
 	}
-
 }
 
 @media only screen and (max-width: 1280px) {
@@ -120,53 +107,46 @@
 		// border: green 1px solid;
 		display: flex;
 	
-			.leftContainer {
-				width: 20%;
-				// border: yellow 1px solid;
-				flex: 0.15;
-				padding-left: 1px;
-				padding-top: 25px;
-				padding-right: 10px;
-			}
+	.leftContainer {
+		width: 20%;
+		// border: yellow 1px solid;
+		flex: 0.15;
+		padding-left: 1px;
+		padding-top: 25px;
+		padding-right: 10px;
+	}
 	
-			.rightContainer {
-				width: 80%;
-				flex: 0.85;
-				margin-bottom: 5%;
-				// border: orange 1px solid;
-				display: flex;
-				flex-direction: column;
-				cursor: pointer;
-				margin: 10px;
+	.rightContainer {
+		width: 80%;
+		flex: 0.85;
+		margin-bottom: 5%;
+		// border: orange 1px solid;
+		display: flex;
+		flex-direction: column;
+		cursor: pointer;
+		margin: 10px;
 	
-				.titleContainer{
-					// border: green 1px solid;
-					width: 100%;
-						> h2 {
-							color:#d23669;
-						font-family: 'Montserrat', sans-serif;
-						font-size: 1.75rem;
-						font-weight: 900
-						}
-				}
-				
-				.dateContainer{
-					// border: blue 1px solid;
-					width: 100%;
+		.titleContainer{
+			// border: green 1px solid;
+			width: 100%;
+		}
+		
+		.dateContainer{
+			// border: blue 1px solid;
+			width: 100%;
+			font-family: 'Merriweather','Georgia',serif;
+			font-size: 14px;
+		}
+	
+		.bottomHalfContainer {
+			// border: pink 1px solid;
+			> p{
+					color:black;
 					font-family: 'Merriweather','Georgia',serif;
+					font-weight: 400;
 					font-size: 14px;
 				}
-	
-				.bottomHalfContainer {
-					// border: pink 1px solid;
-					> p{
-						color:black;
-						font-family: 'Merriweather','Georgia',serif;
-						font-weight: 400;
-						font-size: 14px;
-					}
-				}
+			}
 		}
 	}
-  
 }

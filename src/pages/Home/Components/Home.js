@@ -6,6 +6,7 @@ import styles from './Home.module.scss';
 import Avatar from '../../../atoms/avatar';
 import SocialLink from './SocialLink';
 import ListItemComponent from '../../../molecules/listItemComponent/ListItemComponent';
+import HeaderL from '../../../atoms/headerL';
 import { postItems } from './posts';
 
 const mobileQuery = window.matchMedia( "(max-width: 768px)" );
@@ -48,7 +49,7 @@ export default class Home extends PureComponent {
       <Page>
         <Page.Body className={styles.pageHeader}>
           <div>
-            <h2 className={styles.blogName}>SpaceH</h2>
+            <HeaderL text={'SpaceH'} />
           </div>
           
           <div className={styles.avatar}>
