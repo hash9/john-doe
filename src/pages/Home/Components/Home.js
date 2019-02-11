@@ -7,6 +7,8 @@ import Avatar from '../../../atoms/avatar';
 import SocialLink from './SocialLink';
 import ListItemComponent from '../../../molecules/listItemComponent/ListItemComponent';
 import HeaderL from '../../../atoms/headerL';
+import HeaderM from '../../../atoms/headerM';
+import HeaderXL from '../../../atoms/headerXL';
 import { postItems } from './posts';
 
 const mobileQuery = window.matchMedia( "(max-width: 768px)" );
@@ -43,21 +45,27 @@ export default class Home extends PureComponent {
     return size;
   }
 
+  onCredits = () => {}
+
+  onNavigateToInfo = () => {
+    this.props.history.push("/resume")
+  }
+
   render() {
 
     return (
       <Page>
         <Page.Body className={styles.pageHeader}>
           <div>
-            <HeaderL text={'SpaceH'} />
+            <HeaderXL text={'SpaceH'} />
           </div>
           
-          <div className={styles.avatar}>
-            <Avatar image={require('../../../assets/me.jpg')} onClickImage={() => {console.log("avatar clicked")}} size={'125px'}/>
+          <div>
+            <Avatar className={styles.avatar} image={require('../../../assets/me.jpg')} onClickImage={this.onNavigateToInfo} size={'125px'}/>
           </div>
 
           <div className={styles.title}>
-            <h1>Harshit Prajapati</h1>
+            <HeaderM text={'Harshit Prajapati'} color={'#ffa7c4'} onClick={this.onNavigateToInfo}/>
           </div>
 
           <div className={styles.subTitle}>
@@ -69,9 +77,8 @@ export default class Home extends PureComponent {
           </div>
 
           <div className={styles.navContainer}>
-            <ul className={styles.navSpace}>
-              <NavLink className={styles.navItems} to="/resume">Resume</NavLink>
-            </ul>
+              <h2 className={styles.navItems} onClick={this.onCredits}>Credits</h2>
+              <h2 className={styles.navItems} onClick={this.onNavigateToInfo}>Resume</h2>
           </div>
 
           <div className={styles.footer}>

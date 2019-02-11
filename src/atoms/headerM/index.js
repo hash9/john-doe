@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import PropTypes from 'prop-types'
 
 const StyledHeaderM = styled.h2`
-	color:#d23669;
+	color: ${props => props.color};
 	font-family: 'Montserrat', sans-serif;
 	font-size: 1.75rem;
 	font-weight: 900;
@@ -19,12 +19,14 @@ const HeaderM = props => {
 
 HeaderM.propTypes = {
 	onClick: PropTypes.func,
-  text: PropTypes.string,
+	text: PropTypes.string,
+	color: PropTypes.string,
 }
 
 HeaderM.defaultProps = {
 	onClick: () => {},
-  text: '',
+	text: '',
+	color: '#d23669'
 }
 
 export default HeaderM;

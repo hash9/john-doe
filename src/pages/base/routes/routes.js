@@ -10,9 +10,9 @@ const Routes = () => (
   <Router history={history}>
     <Switch>
       <Suspense fallback={<div>Loading...</div>}>
-        <Route path="/" component={Home} />
+        {/* <Route path="/" component={Home} />
         <Route path="/resume" component={Resume} />
-        <Route path="/item1" component={PostItem} />
+        <Route path="/item1" component={PostItem} /> */}
       </Suspense>
     </Switch>
   </Router>
