@@ -10,7 +10,7 @@ class Resume extends Component {
 	render() { 
 		return (
 			<div className={styles.container}>
-				<img src={require("../../../assets/resume.png")} alt="" className={styles.resume} />
+				<img src={require("../../assets/resume.png")} alt="" className={styles.resume} />
 			</div>
 		);
 	}

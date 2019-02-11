@@ -1,6 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
-import styles from './SocialLink.module.scss';
+import styles from './socialLink.module.scss';
 
 const SocialLink = () => {
 	return (

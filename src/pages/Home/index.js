@@ -1,7 +1,7 @@
 import React from 'react';
 import Proptypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
-import Container from './Components/Home.container';
+import Container from './Home.container';
 
 const HomePage = ({ history }) => (
   <div>

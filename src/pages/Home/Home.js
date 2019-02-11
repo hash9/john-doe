@@ -1,14 +1,11 @@
 import React, { PureComponent } from 'react';
 // import PropTypes from 'prop-types';
-import Page from '../../../molecules/pageComponent/PageComponent';
+import Page from '../../molecules/pageComponent/PageComponent';
 import { NavLink} from 'react-router-dom';
-import styles from './Home.module.scss';
-import Avatar from '../../../atoms/avatar';
+import styles from './home.module.scss';
 import SocialLink from './SocialLink';
-import ListItemComponent from '../../../molecules/listItemComponent/ListItemComponent';
-import HeaderL from '../../../atoms/headerL';
-import HeaderM from '../../../atoms/headerM';
-import HeaderXL from '../../../atoms/headerXL';
+import ListItemComponent from '../../molecules/listItemComponent/ListItemComponent';
+import { Avatar, HeaderM, HeaderL, HeaderXL } from '../../atoms';
 import { postItems } from './posts';
 
 const mobileQuery = window.matchMedia( "(max-width: 768px)" );
@@ -61,7 +58,7 @@ export default class Home extends PureComponent {
           </div>
           
           <div>
-            <Avatar className={styles.avatar} image={require('../../../assets/me.jpg')} onClickImage={this.onNavigateToInfo} size={'125px'}/>
+            <Avatar className={styles.avatar} image={require('../../assets/me.jpg')} onClickImage={this.onNavigateToInfo} size={'125px'}/>
           </div>
 
           <div className={styles.title}>
