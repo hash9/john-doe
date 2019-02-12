@@ -1,11 +1,15 @@
 {
-  "name": "johndoe",
+  "name": "spaceh",
   "version": "0.1.0",
+  "description": "space for spaceh",
+  "author": "Harshit Prajapati",
   "private": true,
   "dependencies": {
     "classnames": "^2.2.6",
     "connected-react-router": "^6.1.0",
     "history": "^4.7.2",
+    "husky": "^1.3.1",
+    "lint-staged": "^8.1.3",
     "lodash": "^4.17.11",
     "node-sass": "^4.11.0",
     "prop-types": "^15.6.2",
@@ -27,7 +31,19 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "./node_modules/.bin/eslint --ext .js,.jsx --ignore-pattern public ."
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,scss}": [
+      "./node_modules/.bin/eslint",
+      "git add"
+    ]
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -39,7 +55,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "webpack": "^4.29.3",
-    "webpack-dev-server": "^3.1.14"
+    "eslint-plugin-react": "^7.12.4",
+    "prettier": "^1.16.4"
   }
 }
