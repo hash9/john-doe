@@ -1,8 +1,6 @@
 import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-// import * as homeActions from 'pages/Home/Home.actions';
-// import { getInventory } from 'pages/Home/Home.selectors';
 import Home from './Home';
 
 const Container = props => (

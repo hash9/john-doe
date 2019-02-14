@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-// import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import Page from '../../molecules/pageComponent/PageComponent';
 import { NavLink} from 'react-router-dom';
 import styles from './home.module.scss';
@@ -11,7 +11,7 @@ import { postItems } from './posts';
 const mobileQuery = window.matchMedia( "(max-width: 768px)" );
 const tabletQuery = window.matchMedia( "(max-width: 1280px)" );
 
-export default class Home extends PureComponent {
+class Home extends PureComponent {
 
   onPostSelect = (val) => {
     switch(val){
@@ -99,8 +99,8 @@ export default class Home extends PureComponent {
   }
 }
 
-Home.propTypes = {
-};
+const mapStateToProps = state => ({
+  ...state
+});
 
-Home.defaultProps = {
-};
+export default connect(mapStateToProps, null)(Home)
