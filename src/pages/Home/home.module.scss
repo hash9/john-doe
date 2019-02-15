@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 50px 24px 0;
+  // margin: 50px 24px 0;
 }
 
 .avatar {
@@ -118,6 +118,15 @@
   width: 40%;
   left: 30%;
 }
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {display:none;}
 
 @media only screen and (max-width: 768px) { 
   .cont{

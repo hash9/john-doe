@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Avatar from '../../atoms/avatar';
 import HeaderM from '../../atoms/headerM';
 import styles from './listItemComponent.module.scss';
+import ThemeContext from '../../context/ThemeContext';
 
 const ListItemComponent = ({
 	items,
@@ -10,6 +11,8 @@ const ListItemComponent = ({
 	size,
 }) => {
 	return items.length && items.map((item, index) => (
+		<ThemeContext.Consumer>
+        {theme => (
 			<div className={styles.mainContainer} onClick={() => onClickItem(item.value)}>
 
 				<div className={styles.leftContainer}>
@@ -18,19 +21,21 @@ const ListItemComponent = ({
 
 				<div className={styles.rightContainer}>
 					<div className={styles.titleContainer}>
-						<HeaderM text={item.title} />
+						<HeaderM style={{ color: theme.config.listTitle }} text={item.title} />
 					</div>
 
 					<div className={styles.dateContainer}>
-						<small>{item.date}</small>
+						<small style={{ color: theme.config.listRest }}>{item.date}</small>
 					</div>
 		
 					<div className={styles.bottomHalfContainer}>
-						<p>{item.subTitle}</p>
+						<p style={{ color: theme.config.listRest }}>{item.subTitle}</p>
 					</div>
 				</div>
 
 			</div>
+			)}
+      </ThemeContext.Consumer>
 		)
 	)
 }
