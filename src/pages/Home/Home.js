@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from "react-router";
 import Page from '../../molecules/pageComponent/PageComponent';
 import { NavLink} from 'react-router-dom';
 import styles from './home.module.scss';
@@ -57,8 +58,8 @@ class Home extends PureComponent {
       <ThemeContext.Consumer>
         {theme => (
           <Page>
-            <Page.Body style={{ backgroundColor: theme.config.bodybg }} className={styles.pageHeader}>
-
+            {/* <Page.Body style={{ backgroundColor: theme.config.bodybg }} className={styles.pageHeader}> */}
+            <Page.Body className={styles.pageHeader}>
               <div className="theme-selector">
                 <label className="switch">
                   <input 
@@ -70,7 +71,7 @@ class Home extends PureComponent {
               </div>
 
               <div>
-                <HeaderXL text={'SpaceH'} />
+                <HeaderXL style={{ color: theme.config.blogMainTitle }} text={'SpaceH'} />
               </div>
               
               <div>
@@ -98,7 +99,7 @@ class Home extends PureComponent {
 
                 <div className={styles.button}></div>
 
-                <div className={styles.container}>
+                <div style={{ backgroundColor: theme.config.bodybg }} className={styles.container}>
                   <div className={styles.cont}>
                     <ListItemComponent 
                       items={postItems}
@@ -121,4 +122,4 @@ const mapStateToProps = state => ({
   ...state
 });
 
-export default connect(mapStateToProps, null)(Home)
+export default withRouter(connect(mapStateToProps, null)(Home))

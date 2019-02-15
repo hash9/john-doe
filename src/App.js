@@ -17,8 +17,13 @@ class App extends Component {
 
   componentDidMount = () => {
     var mode = localStorage.getItem("mode");
-        if (mode) {
-          this.setState({ theme: mode });
+    if (mode) {
+      this.setState({ theme: mode });
+      if(mode === 'dark') {
+        document.body.style.background = themeConfig.dark.bodybg;
+      } else {
+        document.body.style.background = themeConfig.light.bodybg;
+      }
     } else {
       this.setState({ theme: 'light' });
     }
@@ -29,13 +34,15 @@ class App extends Component {
     if (mode === "light") {
       localStorage.setItem("mode", "dark");
       this.setState({ theme: 'dark' });
+      document.body.style.background = themeConfig.dark.bodybg;
     } else {
       localStorage.setItem("mode", "light");
       this.setState({ theme: 'light' });
+      document.body.style.background = themeConfig.light.bodybg;
     }
   }
-  render() { 
-    console.log(this.state.theme,"state")
+  
+  render() {
     return ( 
       <ThemeContext.Provider value={{type: this.state.theme, config: themeConfig[this.state.theme]}}>
         <div>
@@ -45,7 +52,7 @@ class App extends Component {
               {/* <Route path="/" exact component={Home}/> */}
               <Route path="/" exact render={() => <Home toggleTheme={this.toggleTheme}/>} />
               <Route path="/itemone" component={PostItem}/>
-              <Route path="/resume" exact render={() => <Resume/>} />
+              <Route path="/resume" render={() => <Resume />} />
             </div>
           </BrowserRouter>
         </div>
