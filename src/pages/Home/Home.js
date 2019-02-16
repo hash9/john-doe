@@ -88,7 +88,7 @@ class Home extends PureComponent {
                   <h2 className={styles.navItems} onClick={this.onNavigateToInfo}>Resume</h2>
               </div>
 
-              <div className={styles.footer}>
+              <div className={styles.footer} style={{ backgroundColor: theme.config.bodybg }}>
 
                 <div className={styles.button}></div>
 

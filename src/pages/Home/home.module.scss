@@ -86,13 +86,7 @@
   height: 2em;
   overflow:hidden;
   align-items: center;
-	-webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    -ms-transition: all 0.5s ease;
-    transition: all 0.5s ease;
   z-index:999;
-
 }
 
 .footer:hover {
@@ -107,7 +101,6 @@
 .container{
   height:100%;
   position:relative;
-  border:white 1px solid;
   overflow-y: scroll;
   background-color: white;
 }
