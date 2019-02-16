@@ -2,11 +2,10 @@ import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from "react-router";
 import Page from '../../molecules/pageComponent/PageComponent';
-import { NavLink} from 'react-router-dom';
 import styles from './home.module.scss';
 import SocialLink from './SocialLink';
 import ListItemComponent from '../../molecules/listItemComponent/ListItemComponent';
-import { Avatar, HeaderM, HeaderL, HeaderXL } from '../../atoms';
+import { Avatar, HeaderM, HeaderXL, Toggle } from '../../atoms';
 import { postItems } from './posts';
 
 import ThemeContext from '../../context/ThemeContext';
@@ -58,17 +57,11 @@ class Home extends PureComponent {
       <ThemeContext.Consumer>
         {theme => (
           <Page>
-            {/* <Page.Body style={{ backgroundColor: theme.config.bodybg }} className={styles.pageHeader}> */}
             <Page.Body className={styles.pageHeader}>
-              <div className="theme-selector">
-                <label className="switch">
-                  <input 
-                    type="checkbox" 
-                    checked={theme.type === 'light'} 
-                    onChange={this.props.toggleTheme} 
-                  />
-                </label>
-              </div>
+              <Toggle 
+                checked={theme.type === 'dark'} 
+                toggleTheme={this.props.toggleTheme}
+              />
 
               <div>
                 <HeaderXL style={{ color: theme.config.blogMainTitle }} text={'SpaceH'} />
