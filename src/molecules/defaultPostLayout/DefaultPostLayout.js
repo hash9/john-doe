@@ -13,31 +13,26 @@ const mobileQuery = window.matchMedia( "(max-width: 768px)" );
 const tabletQuery = window.matchMedia( "(max-width: 1280px)" );
 
 class DefaultPostLayout extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {  }
-	}
 
-	mediaSize = () => {
-    mobileQuery.addListener(this.screenTestMobile)
-    tabletQuery.addListener(this.screenTestTablet)
-    
-    let size = '';
-    if (mobileQuery.matches) {
-      size = '70px'
-    } else if(tabletQuery.matches) {
-      size = '60px'
-    } else {
-      size = '100px'
-    }
-    return size;
+mediaSize = () => {
+	mobileQuery.addListener(this.screenTestMobile)
+	tabletQuery.addListener(this.screenTestTablet)
+	
+	let size = '';
+	if (mobileQuery.matches) {
+		size = '70px'
+	} else if(tabletQuery.matches) {
+		size = '60px'
+	} else {
+		size = '100px'
 	}
+	return size;
+}
 
-	render() { 
-    const { postTitle, postDate, mainContent, handleBlogName } = this.props;
-		
+render() { 
+	const { postTitle, postDate, mainContent, handleBlogName } = this.props;
     return (
-			<ThemeContext.Consumer>
+      <ThemeContext.Consumer>
         {theme => { 
           const { link, mainTitle, hXl, content } = theme.config;
             return(
