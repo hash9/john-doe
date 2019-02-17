@@ -20,9 +20,9 @@ class App extends Component {
     if (mode) {
       this.setState({ theme: mode });
       if(mode === 'dark') {
-        document.body.style.background = themeConfig.dark.bodybg;
+        document.body.style.background = themeConfig.dark.body;
       } else {
-        document.body.style.background = themeConfig.light.bodybg;
+        document.body.style.background = themeConfig.light.body;
       }
     } else {
       this.setState({ theme: 'light' });
@@ -34,11 +34,11 @@ class App extends Component {
     if (mode === "light") {
       localStorage.setItem("mode", "dark");
       this.setState({ theme: 'dark' });
-      document.body.style.background = themeConfig.dark.bodybg;
+      document.body.style.background = themeConfig.dark.body;
     } else {
       localStorage.setItem("mode", "light");
       this.setState({ theme: 'light' });
-      document.body.style.background = themeConfig.light.bodybg;
+      document.body.style.background = themeConfig.light.body;
     }
   }
   

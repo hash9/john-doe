@@ -12,29 +12,32 @@ const ListItemComponent = ({
 }) => {
 	return items.length && items.map((item, index) => (
 		<ThemeContext.Consumer>
-        {theme => (
-			<div className={styles.mainContainer} onClick={() => onClickItem(item.value)}>
+				{theme => {
+					const { content, mainTitle } = theme.config
+					return (
+					<div className={styles.mainContainer} onClick={() => onClickItem(item.value)}>
 
-				<div className={styles.leftContainer}>
-						<Avatar image={require('../../assets/javascript_logo.png')} onClickImage={() => {console.log("avatar clicked")}} size={size}/>
-				</div>
+						<div className={styles.leftContainer}>
+								<Avatar image={require('../../assets/javascript_logo.png')} onClickImage={() => {console.log("avatar clicked")}} size={size}/>
+						</div>
 
-				<div className={styles.rightContainer}>
-					<div className={styles.titleContainer}>
-						<HeaderM style={{ color: theme.config.listTitle }} text={item.title} />
+						<div className={styles.rightContainer}>
+							<div className={styles.titleContainer}>
+								<HeaderM style={{ color: mainTitle }} text={item.title} />
+							</div>
+
+							<div className={styles.dateContainer}>
+								<small style={{ color: content }}>{item.date}</small>
+							</div>
+				
+							<div className={styles.bottomHalfContainer}>
+								<p style={{ color: content }}>{item.subTitle}</p>
+							</div>
+						</div>
+
 					</div>
-
-					<div className={styles.dateContainer}>
-						<small style={{ color: theme.config.listRest }}>{item.date}</small>
-					</div>
-		
-					<div className={styles.bottomHalfContainer}>
-						<p style={{ color: theme.config.listRest }}>{item.subTitle}</p>
-					</div>
-				</div>
-
-			</div>
-			)}
+					)}
+				}
       </ThemeContext.Consumer>
 		)
 	)

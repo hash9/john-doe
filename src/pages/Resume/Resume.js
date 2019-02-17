@@ -2,10 +2,6 @@ import React, { Component } from 'react';
 import styles from './resume.module.scss'
 
 class Resume extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {  }
-	}
 
 	render() { 
 		return (

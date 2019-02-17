@@ -55,57 +55,59 @@ class Home extends PureComponent {
 
     return (
       <ThemeContext.Consumer>
-        {theme => (
-          <Page>
-            <Page.Body className={styles.pageHeader}>
-              <Toggle 
-                checked={theme.type === 'dark'} 
-                toggleTheme={this.props.toggleTheme}
-              />
+        {theme => { 
+          const { body, link, mainTitle } = theme.config;
+            return(
+            <Page>
+              <Page.Body className={styles.pageHeader}>
+                <Toggle 
+                  checked={theme.type === 'dark'} 
+                  toggleTheme={this.props.toggleTheme}
+                />
 
-              <div>
-                <HeaderXL style={{ color: theme.config.blogMainTitle }} text={'SpaceH'} />
-              </div>
-              
-              <div>
-                <Avatar className={styles.avatar} image={require('../../assets/me.jpg')} onClickImage={this.onNavigateToInfo} size={'125px'}/>
-              </div>
-
-              <div className={styles.title}>
-                <HeaderM text={'Harshit Prajapati'} color={'#ffa7c4'} onClick={this.onNavigateToInfo}/>
-              </div>
-
-              <div className={styles.subTitle}>
-                <h3>Blog in Progress</h3>
-              </div>
-
-              <div className={styles.links}>
-                <SocialLink />
-              </div>
-
-              <div className={styles.navContainer}>
-                  <h2 className={styles.navItems} onClick={this.onCredits}>Credits</h2>
-                  <h2 className={styles.navItems} onClick={this.onNavigateToInfo}>Resume</h2>
-              </div>
-
-              <div className={styles.footer} style={{ backgroundColor: theme.config.bodybg }}>
-
-                <div className={styles.button}></div>
-
-                <div style={{ backgroundColor: theme.config.bodybg }} className={styles.container}>
-                  <div className={styles.cont}>
-                    <ListItemComponent 
-                      items={postItems}
-                      onClickItem={this.onPostSelect}
-                      size={this.mediaSize}
-                    />
-                  </div>
+                <div>
+                  <HeaderXL style={{ color: mainTitle }} text={'SpaceH'} />
+                </div>
+                
+                <div>
+                  <Avatar className={styles.avatar} image={require('../../assets/me.jpg')} onClickImage={this.onNavigateToInfo} size={'125px'}/>
                 </div>
 
-              </div>
-            </Page.Body>
-          </Page>
-        )}
+                <div className={styles.title}>
+                  <HeaderM text={'Harshit Prajapati'} color={'#ffa7c4'} onClick={this.onNavigateToInfo}/>
+                </div>
+
+                <div className={styles.subTitle}>
+                  <h3>Blog in Progress</h3>
+                </div>
+
+                <div className={styles.links}>
+                  <SocialLink />
+                </div>
+
+                <div className={styles.navContainer}>
+                  <h2 className={styles.navItems} style={{ color: link }} onClick={this.onCredits}>Credits</h2>
+                  <h2 className={styles.navItems} style={{ color: link }} onClick={this.onNavigateToInfo}>Resume</h2>
+                </div>
+
+                <div className={styles.footer} style={{ backgroundColor: body }}>
+                  <div className={styles.button}></div>
+
+                  <div style={{ backgroundColor: body }} className={styles.container}>
+                    <div className={styles.cont}>
+                      <ListItemComponent 
+                        items={postItems}
+                        onClickItem={this.onPostSelect}
+                        size={this.mediaSize}
+                      />
+                    </div>
+                  </div>
+
+                </div>
+              </Page.Body>
+            </Page>
+          )
+        }}
       </ThemeContext.Consumer>
     );
   }

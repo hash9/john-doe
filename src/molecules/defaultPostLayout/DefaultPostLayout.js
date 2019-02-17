@@ -34,67 +34,70 @@ class DefaultPostLayout extends Component {
 	}
 
 	render() { 
-		const { postTitle, postDate, content, handleBlogName } = this.props;
+		const { postTitle, postDate, mainContent, handleBlogName } = this.props;
 		
 		return (
 			<ThemeContext.Consumer>
-				{theme => (
-					<Page>
-						<Page.Header className={styles.dPageHeader}>
-							<header>
-								<HeaderR text={'SpaceH'} onClick={handleBlogName} />
-							</header>
-						</Page.Header>
-						<Page.Body className={styles.dPageBody}>
-							<main>
-								<article>
-
-									<header>
-										<div className={styles.mainContainer}>
-
-											<div className={styles.titleContainer}>
-												<HeaderXL style={{ color: theme.config.postTitle }} text={postTitle} />
-											</div>
-			
-											<div className={styles.dateContainer}>
-												<small style={{ color: theme.config.fontXl }}>{postDate}</small>
-											</div>
-
-										</div>
-									</header>
-
-									<div className={styles.content}>
-										{content}
-									</div>
-
-								</article>
-							</main>
-						</Page.Body>
-						<Page.Footer className={styles.dPageFooter}>
-							<footer>
-								<Seperator />
-
+				{theme => { 
+          const { link, mainTitle, hXl, content } = theme.config;
+            return(
+						<Page>
+							<Page.Header className={styles.dPageHeader}>
+								<header>
 									<HeaderR text={'SpaceH'} onClick={handleBlogName} />
-									<div className={styles.footerMainContainer}>
+								</header>
+							</Page.Header>
+							<Page.Body className={styles.dPageBody}>
+								<main>
+									<article>
+
+										<header>
+											<div className={styles.mainContainer}>
+
+												<div className={styles.titleContainer}>
+													<HeaderXL style={{ color: mainTitle }} text={postTitle} />
+												</div>
 				
-										<div className={styles.footerLeftContainer}>
-												<Avatar image={require('../../assets/me.jpg')} size={'60px'}/>
-										</div>
-				
-										<div className={styles.footerRightContainer}>
-											<div className={styles.footerTopTextStyle}>
-												<p style={{ color: theme.config.fontColor }}>
-													Personal Blog by <Anchor href={''} text={'Harshit Prajapati'} />
-												</p>
-												<p style={{ color: theme.config.fontColor }}>Blog in progress</p>
+												<div className={styles.dateContainer}>
+													<small style={{ color: hXl }}>{postDate}</small>
+												</div>
+
 											</div>
+										</header>
+
+										<div className={styles.content}>
+											{mainContent}
 										</div>
-				
-									</div>
-							</footer>
-						</Page.Footer>
-					</Page>
-				)}
+
+									</article>
+								</main>
+							</Page.Body>
+							<Page.Footer className={styles.dPageFooter}>
+								<footer>
+									<Seperator />
+
+										<HeaderR text={'SpaceH'} onClick={handleBlogName} />
+										<div className={styles.footerMainContainer}>
+					
+											<div className={styles.footerLeftContainer}>
+													<Avatar image={require('../../assets/me.jpg')} size={'60px'}/>
+											</div>
+					
+											<div className={styles.footerRightContainer}>
+												<div className={styles.footerTopTextStyle}>
+													<p style={{ color: content }}>
+														Personal Blog by <Anchor href={''} style={{ color: link }} text={'Harshit Prajapati'} />
+													</p>
+													<p style={{ color: content }}>Blog in progress</p>
+												</div>
+											</div>
+					
+										</div>
+								</footer>
+							</Page.Footer>
+						</Page>
+					)} 
+				}
 			</ThemeContext.Consumer>
 		);
 	}
@@ -104,14 +107,14 @@ DefaultPostLayout.propTypes = {
 	postTitle: PropTypes.string,
 	postDate: PropTypes.string,
 	size: PropTypes.string,
-	content: PropTypes.object,
+	mainContent: PropTypes.object,
 };
 
 DefaultPostLayout.defaultProps = {
 	postTitle: 'You shouldn`t be seeing this',
 	postDate: '9th April, 1995',
 	size: '70px',
-	content: {},
+	mainContent: {},
 };
 
 export default DefaultPostLayout;
