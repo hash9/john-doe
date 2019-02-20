@@ -33,7 +33,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "./node_modules/.bin/eslint --ext .js,.jsx --ignore-pattern public ."
+    "lint": "./node_modules/.bin/eslint --ext .js,.jsx --ignore-pattern public .",
+    "prettify": "find src -name '*.js' | xargs prettier --write"
   },
   "husky": {
     "hooks": {
@@ -42,6 +43,7 @@
   },
   "lint-staged": {
     "src/**/*.{js,scss}": [
+      "prettier --write",
       "./node_modules/.bin/eslint",
       "git add"
     ]
