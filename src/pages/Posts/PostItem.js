@@ -3,7 +3,7 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { atomDark } from 'react-syntax-highlighter/dist/styles/prism';
 import DefaultPostlayout from '../../molecules/defaultPostLayout/DefaultPostLayout';
 import styles from './commonPostStyles.module.scss';
-import ThemeContext from '../../context/ThemeContext';
+import ThemeContext from '../../themes/ThemeContext';
 
 class PostItem extends Component {
 	constructor(props) {

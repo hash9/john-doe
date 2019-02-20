@@ -7,8 +7,7 @@ import SocialLink from './SocialLink';
 import ListItemComponent from '../../molecules/listItemComponent/ListItemComponent';
 import { Avatar, HeaderM, HeaderXL, Toggle } from '../../atoms';
 import { postItems } from './posts';
-
-import ThemeContext from '../../context/ThemeContext';
+import ThemeContext from '../../themes/ThemeContext';
 
 const mobileQuery = window.matchMedia( "(max-width: 768px)" );
 const tabletQuery = window.matchMedia( "(max-width: 1280px)" );

@@ -7,7 +7,7 @@ import HeaderR from '../../atoms/headerR';
 import HeaderXL from '../../atoms/headerXL';
 import Anchor from '../../atoms/anchor';
 import styles from './defaultPostLayout.module.scss';
-import ThemeContext from '../../context/ThemeContext';
+import ThemeContext from '../../themes/ThemeContext';
 
 const mobileQuery = window.matchMedia( "(max-width: 768px)" );
 const tabletQuery = window.matchMedia( "(max-width: 1280px)" );

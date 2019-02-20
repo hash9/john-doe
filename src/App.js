@@ -1,7 +1,6 @@
 import React,{ Component }  from 'react';
 import { BrowserRouter, Route } from "react-router-dom";
-import {themeConfig} from './context/ThemeContext';
-import ThemeContext from './context/ThemeContext';
+import ThemeContext, { themeConfig } from './themes/ThemeContext';
 
 import Home from './pages/Home/Home';
 import Resume from './pages/Resume/Resume';

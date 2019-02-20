@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Avatar from '../../atoms/avatar';
 import HeaderM from '../../atoms/headerM';
 import styles from './listItemComponent.module.scss';
-import ThemeContext from '../../context/ThemeContext';
+import ThemeContext from '../../themes/ThemeContext';
 
 const ListItemComponent = ({
 	items,
