@@ -1,60 +1,64 @@
 a {
-	text-decoration: none;
-	color: inherit;
+  text-decoration: none;
+  color: inherit;
 }
 
 .cIcon {
-	width:  20px;
-	height: 20px;
-	fill: currentColor;
-	transition: .2s;
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+  transition: 0.2s;
 }
 
-.cLinkBrand:hover  { color: #000 }
-.cLinkBrand:hover::after  { background: #000 }
+.cLinkBrand:hover {
+  color: #000;
+}
+.cLinkBrand:hover::after {
+  background: #000;
+}
 
 .cLink {
-	position: relative;
-	color: #bbb;
+  position: relative;
+  color: #bbb;
 }
 
 .cLink:not(:last-of-type) {
-	margin-right: 15px;
+  margin-right: 15px;
 }
 
 .cTooltip::before,
 .cTooltip::after {
-	display: block;
-	position: absolute;
-	left: 50%;
-	transform: translate(-50%, -10px);
-	opacity: 0;
-	transition: .2s;
+  display: block;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -10px);
+  opacity: 0;
+  transition: 0.2s;
 }
 
 .cTooltip::before {
-	content: '';
-	top: calc(100% + 2px);
-	border: solid 5px transparent;
-	border-bottom-color: currentColor;
+  content: '';
+  top: calc(100% + 2px);
+  border: solid 5px transparent;
+  border-bottom-color: currentColor;
 }
 
 .cTooltip::after {
-	content: attr(aria-label);
-	top: calc(100% + 12px);
-	padding: .70em .93em;
-	font-size: .800rem;
-	font-family: 'Montserrat', sans-serif;
-	color: white;
-	border-radius: 3px;
+  content: attr(aria-label);
+  top: calc(100% + 12px);
+  padding: 0.7em 0.93em;
+  font-size: 0.8rem;
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+  border-radius: 3px;
 }
 
 .cTooltip:hover::before,
 .cTooltip:hover::after {
-	opacity: 1;
-	transform: translate(-50%);
+  opacity: 1;
+  transform: translate(-50%);
 }
 
 .tool {
-	display: none
+  display: none;
 }
