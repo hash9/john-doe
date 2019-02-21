@@ -5,24 +5,20 @@ import styles from './socialLink.module.scss';
 const SocialLink = () => {
 	return (
 		<div>
-			<a href="#0" className={classNames(styles.cLink, styles.cLinkBrand, styles.cTooltip)} aria-label="Github">
+			<a href="https://github.com/hash9" 
+				className={classNames(styles.cLink, styles.cLinkBrand, styles.cTooltip)} 
+				aria-label="/hash9"
+			>
 				<svg className={classNames(styles.cIcon)}>
 					<use xlinkHref="#icon-github"></use>
 				</svg>
 			</a>
-			<a href="#0" className={classNames(styles.cLink, styles.cLinkBrand, styles.cTooltip)} aria-label="StackOverflow">
+			<a href="https://stackoverflow.com/users/4369660/hsbp" 
+				className={classNames(styles.cLink, styles.cLinkBrand, styles.cTooltip)} 
+				aria-label="/hsbp"
+			>
 				<svg className={classNames(styles.cIcon)}>
 					<use xlinkHref="#icon-stackoverflow"></use>
-				</svg>
-			</a>
-			<a href="#0" className={classNames(styles.cLink, styles.cLinkBrand, styles.cTooltip)} aria-label="Instagram">
-				<svg className={classNames(styles.cIcon)}>
-					<use xlinkHref="#icon-instagram"></use>
-				</svg>
-			</a>
-			<a href="#0" className={classNames(styles.cLink, styles.cLinkBrand, styles.cTooltip)} aria-label="LinkedIn">
-				<svg className={classNames(styles.cIcon)}>
-					<use xlinkHref="#icon-linkedin"></use>
 				</svg>
 			</a>
 
@@ -34,16 +30,6 @@ const SocialLink = () => {
 			<svg style={{display: 'none'}}>
 				<symbol id="icon-stackoverflow" viewBox="0 0 24 24">
 					<path d="M18.986 21.865v-6.404h2.134V24H1.844v-8.539h2.13v6.404h15.012zM6.111 19.731H16.85v-2.137H6.111v2.137zm.259-4.852l10.48 2.189.451-2.07-10.478-2.187-.453 2.068zm1.359-5.056l9.705 4.53.903-1.95-9.706-4.53-.902 1.936v.014zm2.715-4.785l8.217 6.855 1.359-1.62-8.216-6.853-1.35 1.617-.01.001zM15.751 0l-1.746 1.294 6.405 8.604 1.746-1.294L15.749 0h.002z"/>
-				</symbol>
-			</svg>
-			<svg style={{display: 'none'}}>
-				<symbol id="icon-instagram" viewBox="0 0 24 24">
-				<path d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z" />
-				</symbol>
-			</svg>
-			<svg style={{display: 'none'}}>
-				<symbol id="icon-linkedin" viewBox="0 0 24 24">
-					<path d="M19,19H16V13.7A1.5,1.5 0 0,0 14.5,12.2A1.5,1.5 0 0,0 13,13.7V19H10V10H13V11.2C13.5,10.36 14.59,9.8 15.5,9.8A3.5,3.5 0 0,1 19,13.3M6.5,8.31C5.5,8.31 4.69,7.5 4.69,6.5A1.81,1.81 0 0,1 6.5,4.69C7.5,4.69 8.31,5.5 8.31,6.5A1.81,1.81 0 0,1 6.5,8.31M8,19H5V10H8M20,2H4C2.89,2 2,2.89 2,4V20A2,2 0 0,0 4,22H20A2,2 0 0,0 22,20V4C22,2.89 21.1,2 20,2Z" />
 				</symbol>
 			</svg>
 			
