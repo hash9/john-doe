@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 import ThemeContext, { themeConfig } from './themes/ThemeContext';
 import * as colors from './themes/colors';
+import { LIGHT, DARK, META, MODE, CONTENT } from './themes/strings';
 import Home from './pages/Home/Home';
 import Resume from './pages/Resume/Resume';
 import PostItem from './pages/Posts/PostItem';
@@ -10,40 +11,41 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      theme: 'light',
+      theme: LIGHT,
     };
   }
 
   componentDidMount() {
-    var mode = localStorage.getItem('mode');
-    var metaList = document.getElementsByTagName('meta');
-    if (mode) {
-      this.setState({ theme: mode });
-      if (mode === 'dark') {
-        document.body.style.background = themeConfig.dark.body;
-        metaList[2].setAttribute('content', colors.notSoBlack);
-      } else {
-        document.body.style.background = themeConfig.light.body;
-        metaList[2].setAttribute('content', colors.lightRed);
-      }
+    // mode: maintaining the theme state on refresh
+    // meta: setting the status bar colors on mobile
+    let mode = localStorage.getItem(MODE);
+    let metaList = document.getElementsByTagName(META);
+
+    if (mode === DARK) {
+      document.body.style.background = themeConfig.dark.body;
+      metaList[2].setAttribute(CONTENT, colors.notSoBlack);
     } else {
-      this.setState({ theme: 'light' });
+      document.body.style.background = themeConfig.light.body;
+      metaList[2].setAttribute(CONTENT, colors.lightRed);
     }
+
+    this.setState({ theme: mode });
   }
 
   toggleTheme = () => {
-    var mode = localStorage.getItem('mode');
-    var metaList = document.getElementsByTagName('meta');
-    if (mode === 'light') {
-      localStorage.setItem('mode', 'dark');
-      this.setState({ theme: 'dark' });
+    let mode = localStorage.getItem(MODE);
+    let metaList = document.getElementsByTagName(META);
+
+    if (mode === LIGHT) {
+      localStorage.setItem(MODE, DARK);
       document.body.style.background = themeConfig.dark.body;
-      metaList[2].setAttribute('content', colors.notSoBlack);
+      metaList[2].setAttribute(CONTENT, colors.notSoBlack);
+      this.setState({ theme: DARK });
     } else {
-      localStorage.setItem('mode', 'light');
-      this.setState({ theme: 'light' });
+      localStorage.setItem(MODE, LIGHT);
       document.body.style.background = themeConfig.light.body;
-      metaList[2].setAttribute('content', colors.lightRed);
+      metaList[2].setAttribute(CONTENT, colors.lightRed);
+      this.setState({ theme: LIGHT });
     }
   };
 
@@ -57,9 +59,7 @@ class App extends Component {
       >
         <div>
           <BrowserRouter>
-            {/* <Routes /> */}
             <div>
-              {/* <Route path="/" exact component={Home}/> */}
               <Route
                 path="/"
                 exact

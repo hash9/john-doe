@@ -4,46 +4,35 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import styles from './pageComponent.module.scss';
 
-const Page = ({
-  children,
-  forwardRef,
-}) => (
+const NOOP = () => {};
+
+const Page = ({ children, forwardRef }) => (
   <div ref={forwardRef} className="relative">
     {children}
   </div>
 );
 
-const Header = ({
-  children,
-  className,
-  style,
-  hasSeparator,
-}) => {
-
+const Header = ({ children, className, style, hasSeparator }) => {
   return [
     <div className={cx(styles.headerContainer, className)} style={style}>
-      <div className={cx(styles.headerContent)}>
-        {children}
-      </div>
+      <div className={cx(styles.headerContent)}>{children}</div>
     </div>,
-    hasSeparator && (<hr className={cx(styles.separator)} />),
+    hasSeparator && <hr className={cx(styles.separator)} />,
   ];
 };
 
 Page.Header = withRouter(Header);
 
-Page.Body = ({
-  children, className, style,
-}) => (
-  <div className={cx(styles.pageBody, className)} style={style}>{children}</div>
+Page.Body = ({ children, className, style }) => (
+  <div className={cx(styles.pageBody, className)} style={style}>
+    {children}
+  </div>
 );
 
-Page.Footer = ({
-  children,
-  className,
-  style,
-}) => (
-  <div className={className} style={style}>{children}</div>
+Page.Footer = ({ children, className, style }) => (
+  <div className={className} style={style}>
+    {children}
+  </div>
 );
 
 Page.propTypes = {
@@ -56,7 +45,7 @@ Page.propTypes = {
 
 Page.defaultProps = {
   children: null,
-  forwardRef: ()=>{},
+  forwardRef: NOOP,
 };
 
 Page.Header.propTypes = {
@@ -94,6 +83,5 @@ Page.Footer.defaultProps = {
   className: null,
   style: null,
 };
-
 
 export default Page;

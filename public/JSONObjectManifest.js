@@ -17,4 +17,5 @@ var dynamicManifest = {
 const stringManifest = JSON.stringify(dynamicManifest);
 const blob = new Blob([stringManifest], {type: 'application/json'});
 const manifestURL = URL.createObjectURL(blob);
+
 document.querySelector('#dynamic-manifest').setAttribute('href', manifestURL);
