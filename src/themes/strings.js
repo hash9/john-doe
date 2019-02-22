@@ -9,4 +9,4 @@ export const ROUTES = {
   RESUME: 'Resume',
 };
 
-export const SHORT_BLOG_DESCRITION = 'Orbit of words around code';
+export const SHORT_BLOG_DESCRIPTION = 'Orbit of words around code';

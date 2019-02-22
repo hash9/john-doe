@@ -7,7 +7,7 @@ import HeaderXL from '../../atoms/headerXL';
 import Anchor from '../../atoms/anchor';
 import styles from './defaultPostLayout.module.scss';
 import ThemeContext from '../../themes/ThemeContext';
-import { SHORT_BLOG_DESCRITION } from '../../themes/strings';
+import { SHORT_BLOG_DESCRIPTION } from '../../themes/strings';
 
 const displayPicture = require('../../assets/me.jpg');
 const EMPTY_OBJECT = {};
@@ -82,7 +82,7 @@ class DefaultPostLayout extends Component {
                           />
                         </p>
                         <p style={{ color: content }}>
-                          {SHORT_BLOG_DESCRITION}
+                          {SHORT_BLOG_DESCRIPTION}
                         </p>
                       </div>
                     </div>

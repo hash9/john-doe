@@ -9,7 +9,7 @@ import { postItems } from './posts';
 import ThemeContext from '../../themes/ThemeContext';
 import { DARK, ROUTES } from '../../themes/strings';
 import * as colors from '../../themes/colors';
-import { SHORT_BLOG_DESCRITION } from '../../themes/strings';
+import { SHORT_BLOG_DESCRIPTION } from '../../themes/strings';
 
 const displayPicture = require('../../assets/me.jpg');
 
@@ -86,7 +86,7 @@ class Home extends PureComponent {
                 </div>
 
                 <div className={styles.subTitle}>
-                  <h3>{SHORT_BLOG_DESCRITION}</h3>
+                  <h3>{SHORT_BLOG_DESCRIPTION}</h3>
                 </div>
 
                 <div className={styles.links}>
