@@ -55,7 +55,7 @@ class Home extends PureComponent {
     return (
       <ThemeContext.Consumer>
         {theme => {
-          const { body, link, mainTitle } = theme.config;
+          const { body, link, mainTitle, mainDesc, ring } = theme.config;
           return (
             <Page>
               <Page.Body className={styles.pageHeader}>
@@ -86,7 +86,7 @@ class Home extends PureComponent {
                 </div>
 
                 <div className={styles.subTitle}>
-                  <h3>{SHORT_BLOG_DESCRIPTION}</h3>
+                  <h3 style={{ color: mainDesc }}>{SHORT_BLOG_DESCRIPTION}</h3>
                 </div>
 
                 <div className={styles.links}>
@@ -95,14 +95,14 @@ class Home extends PureComponent {
 
                 <div className={styles.navContainer}>
                   <h2
-                    className={styles.navItems}
+                    className={styles.navCredits}
                     style={{ color: link }}
                     onClick={this.onCredits}
                   >
                     {ROUTES.CREDITS}
                   </h2>
                   <h2
-                    className={styles.navItems}
+                    className={styles.navResume}
                     style={{ color: link }}
                     onClick={this.onNavigateToInfo}
                   >
@@ -114,7 +114,7 @@ class Home extends PureComponent {
                   className={styles.footer}
                   style={{ backgroundColor: body }}
                 >
-                  <div className={styles.button} />
+                  <div className={styles.button} style={{ border: ring }} />
 
                   <div
                     style={{ backgroundColor: body }}

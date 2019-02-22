@@ -45,7 +45,7 @@ a {
 
 .cTooltip::after {
   content: attr(aria-label);
-  top: calc(100% + 12px);
+  top: calc(100%);
   padding: 0.7em 0.93em;
   font-size: 0.8rem;
   font-family: 'Montserrat', sans-serif;

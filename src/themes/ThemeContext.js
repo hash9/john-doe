@@ -9,6 +9,8 @@ export const themeConfig = {
     mainTitle: colors.richRed,
     link: colors.richRed,
     seperator: colors.soBlack,
+    mainDesc: colors.closeGrey,
+    ring: colors.ringborder,
   },
   dark: {
     body: colors.notSoBlack,
@@ -17,6 +19,8 @@ export const themeConfig = {
     mainTitle: colors.lightRed,
     link: colors.lightRed,
     seperator: colors.grey,
+    mainDesc: colors.grey,
+    ring: colors.darkRingBorder,
   },
 };
 

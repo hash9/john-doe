@@ -7,8 +7,8 @@ const NOOP = () => {};
 const Styled = styled.label`
   position: relative;
   display: inline-block;
-  width: 52px;
-  height: 27px;
+  width: 49px;
+  height: 24.5px;
 
   > input {
     display: none;
@@ -24,13 +24,13 @@ const Styled = styled.label`
     background-color: #ccc;
     -webkit-transition: 0.2s;
     transition: 0.2s;
-    border-radius: 34px;
+    border-radius: 35px;
 
     &:before {
       position: absolute;
       content: '';
-      height: 19px;
-      width: 19px;
+      height: 17px;
+      width: 17px;
       left: 4px;
       bottom: 4px;
       background-color: white;
