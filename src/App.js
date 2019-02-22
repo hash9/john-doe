@@ -5,7 +5,7 @@ import * as colors from './themes/colors';
 import { LIGHT, DARK, META, MODE, CONTENT } from './themes/strings';
 import Home from './pages/Home/Home';
 import Resume from './pages/Resume/Resume';
-import PostItem from './pages/Posts/PostItem';
+import { NullUndefinedNotdefined } from './pages/Posts';
 
 class App extends Component {
   constructor(props) {
@@ -65,8 +65,11 @@ class App extends Component {
                 exact
                 render={() => <Home toggleTheme={this.toggleTheme} />}
               />
-              <Route path="/itemone" component={PostItem} />
               <Route path="/resume" render={() => <Resume />} />
+              <Route
+                path="/null-undefined-and-notdefined"
+                component={NullUndefinedNotdefined}
+              />
             </div>
           </BrowserRouter>
         </div>

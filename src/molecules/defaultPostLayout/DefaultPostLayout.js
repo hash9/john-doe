@@ -48,7 +48,7 @@ class DefaultPostLayout extends Component {
                       <div className={styles.mainContainer}>
                         <div className={styles.titleContainer}>
                           <HeaderXL
-                            style={{ color: mainTitle }}
+                            style={{ color: mainTitle, margin: 1 }}
                             text={postTitle}
                           />
                         </div>

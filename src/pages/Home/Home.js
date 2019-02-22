@@ -20,7 +20,7 @@ class Home extends PureComponent {
   onPostSelect = val => {
     switch (val) {
       case 0:
-        this.props.history.push('/itemone');
+        this.props.history.push('/null-undefined-and-notdefined');
         break;
       case 1:
         break;
@@ -72,17 +72,12 @@ class Home extends PureComponent {
                   <Avatar
                     className={styles.avatar}
                     image={displayPicture}
-                    onClickImage={this.onNavigateToInfo}
                     size={'125px'}
                   />
                 </div>
 
                 <div className={styles.title}>
-                  <HeaderM
-                    text={'Harshit Prajapati'}
-                    color={colors.lightRed}
-                    onClick={this.onNavigateToInfo}
-                  />
+                  <HeaderM text={'Harshit Prajapati'} color={colors.lightRed} />
                 </div>
 
                 <div className={styles.subTitle}>
