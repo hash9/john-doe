@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import Disqus from 'disqus-react';
 import Page from '../pageComponent/PageComponent';
 import Avatar from '../../atoms/avatar';
 import HeaderR from '../../atoms/headerR';
@@ -29,7 +30,15 @@ class DefaultPostLayout extends Component {
   };
 
   render() {
+    const disqusShortname = 'space-h';
     const { postTitle, postDate, mainContent, handleBlogName } = this.props;
+    const { state, pathname } = this.props.location;
+    const disqusConfig = {
+      url: pathname,
+      identifier: state.id,
+      title: state.title,
+    };
+    console.log(disqusConfig, 'props');
     return (
       <ThemeContext.Consumer>
         {theme => {
@@ -87,6 +96,10 @@ class DefaultPostLayout extends Component {
                       </div>
                     </div>
                   </div>
+                  <Disqus.DiscussionEmbed
+                    shortname={disqusShortname}
+                    config={disqusConfig}
+                  />
                 </footer>
               </Page.Footer>
             </Page>

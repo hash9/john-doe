@@ -66,13 +66,18 @@ domContainer.appendChild(domNode);`;
 
   render() {
     const { content } = this.state;
+    const { state, pathname } = this.props.location;
 
     return (
       <DefaultPostlayout
-        postTitle={'Null, Undefined & Not-defined'}
-        postDate={'February 23, 2019'}
+        {...this.props}
+        postTitle={state.title}
+        postDate={state.date}
         mainContent={content}
         handleBlogName={this.handleBlogName}
+        // pathname={pathname}
+        // id={state.id}
+        // title={state.title}
       />
     );
   }

@@ -17,10 +17,19 @@ const mobileQuery = window.matchMedia('(max-width: 768px)');
 const tabletQuery = window.matchMedia('(max-width: 1280px)');
 
 class Home extends PureComponent {
-  onPostSelect = val => {
-    switch (val) {
+  onPostSelect = item => {
+    switch (item.value) {
       case 0:
-        this.props.history.push('/null-undefined-and-notdefined');
+        this.props.history.push({
+          pathname: '/null-undefined-and-notdefined',
+          state: {
+            id: item.value,
+            title: item.title,
+            date: item.date,
+            subtitle: item.subtitle,
+          },
+        });
+        console.log(this.props.history, 'history');
         break;
       case 1:
         break;

@@ -20,7 +20,7 @@ const ListItemComponent = ({ items, onClickItem, size }) => {
           return (
             <div
               className={styles.mainContainer}
-              onClick={() => onClickItem(item.value)}
+              onClick={() => onClickItem(item)}
             >
               <div className={styles.leftContainer}>
                 <Avatar image={jsLogo} size={size} />
@@ -36,7 +36,7 @@ const ListItemComponent = ({ items, onClickItem, size }) => {
                 </div>
 
                 <div className={styles.bottomHalfContainer}>
-                  <p style={{ color: content }}>{item.subTitle}</p>
+                  <p style={{ color: content }}>{item.subtitle}</p>
                 </div>
               </div>
             </div>
