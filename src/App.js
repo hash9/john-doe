@@ -20,13 +20,14 @@ class App extends Component {
     // meta: setting the status bar colors on mobile
     let mode = localStorage.getItem(MODE);
     let metaList = document.getElementsByTagName(META);
-    this.setState({ theme: mode });
     if (mode === DARK) {
       document.body.style.background = themeConfig.dark.body;
       metaList[2].setAttribute(CONTENT, colors.notSoBlack);
+      this.setState({ theme: mode });
     } else {
       document.body.style.background = themeConfig.light.body;
       metaList[2].setAttribute(CONTENT, colors.lightRed);
+      this.setState({ theme: mode });
     }
   }
 
