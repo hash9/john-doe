@@ -65,7 +65,6 @@ class Home extends PureComponent {
       <ThemeContext.Consumer>
         {theme => {
           const { body, link, mainTitle, mainDesc, ring } = theme.config;
-          console.log(theme, 'theme');
           return (
             <Page>
               <Page.Body className={styles.pageHeader}>
