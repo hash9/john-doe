@@ -10,7 +10,12 @@ import { NullUndefinedNotdefined } from './pages/Posts';
 class App extends Component {
   constructor(props) {
     super(props);
-    let mode = localStorage.getItem(MODE);
+    let mode;
+    if (localStorage.hasOwnProperty('mode')) {
+      mode = localStorage.getItem(MODE);
+    } else {
+      mode = localStorage.setItem(MODE, LIGHT);
+    }
     this.state = {
       theme: mode,
     };
@@ -21,17 +26,15 @@ class App extends Component {
     // meta: setting the status bar colors on mobile
     let mode = localStorage.getItem(MODE);
     let metaList = document.getElementsByTagName(META);
-    if (mode) {
-      if (mode === DARK) {
-        document.body.style.background = themeConfig.dark.body;
-        metaList[2].setAttribute(CONTENT, colors.notSoBlack);
-        this.setState({ theme: DARK });
-      } else {
-        document.body.style.background = themeConfig.light.body;
-        metaList[2].setAttribute(CONTENT, colors.lightRed);
-        this.setState({ theme: LIGHT });
-      }
+    if (mode === DARK) {
+      document.body.style.background = themeConfig.dark.body;
+      localStorage.setItem(MODE, DARK);
+      metaList[2].setAttribute(CONTENT, colors.notSoBlack);
+      this.setState({ theme: DARK });
     } else {
+      localStorage.setItem(MODE, LIGHT);
+      document.body.style.background = themeConfig.light.body;
+      metaList[2].setAttribute(CONTENT, colors.lightRed);
       this.setState({ theme: LIGHT });
     }
   }
