@@ -9,48 +9,48 @@ import { NullUndefinedNotdefined } from './pages/Posts';
 
 class App extends Component {
   constructor(props) {
-    // super(props);
-    // let mode;
-    // if (localStorage.hasOwnProperty('mode')) {
-    //   mode = localStorage.getItem(MODE);
-    // } else {
-    //   mode = localStorage.setItem(MODE, LIGHT);
-    // }
-    // this.state = {
-    //   theme: mode,
-    // };
     super(props);
+    let mode;
+    if (localStorage.hasOwnProperty('mode')) {
+      mode = localStorage.getItem(MODE);
+    } else {
+      mode = localStorage.setItem(MODE, LIGHT);
+    }
     this.state = {
-      theme: LIGHT,
+      theme: mode,
     };
+    // super(props);
+    // this.state = {
+    //   theme: LIGHT,
+    // };
   }
 
   componentDidMount() {
     // mode: maintaining the theme state on refresh
     // meta: setting the status bar colors on mobile
-    // let mode = localStorage.getItem(MODE);
-    // let metaList = document.getElementsByTagName(META);
-    // if (mode === DARK) {
-    //   document.body.style.background = themeConfig.dark.body;
-    //   localStorage.setItem(MODE, DARK);
-    //   metaList[2].setAttribute(CONTENT, colors.notSoBlack);
-    //   this.setState({ theme: DARK });
-    // } else {
-    //   localStorage.setItem(MODE, LIGHT);
-    //   document.body.style.background = themeConfig.light.body;
-    //   metaList[2].setAttribute(CONTENT, colors.lightRed);
-    //   this.setState({ theme: LIGHT });
-    // }
     let mode = localStorage.getItem(MODE);
     let metaList = document.getElementsByTagName(META);
-    this.setState({ theme: mode });
     if (mode === DARK) {
       document.body.style.background = themeConfig.dark.body;
+      localStorage.setItem(MODE, DARK);
       metaList[2].setAttribute(CONTENT, colors.notSoBlack);
+      this.setState({ theme: DARK });
     } else {
+      localStorage.setItem(MODE, LIGHT);
       document.body.style.background = themeConfig.light.body;
       metaList[2].setAttribute(CONTENT, colors.lightRed);
+      this.setState({ theme: LIGHT });
     }
+    // let mode = localStorage.getItem(MODE);
+    // let metaList = document.getElementsByTagName(META);
+    // this.setState({ theme: mode });
+    // if (mode === DARK) {
+    //   document.body.style.background = themeConfig.dark.body;
+    //   metaList[2].setAttribute(CONTENT, colors.notSoBlack);
+    // } else {
+    //   document.body.style.background = themeConfig.light.body;
+    //   metaList[2].setAttribute(CONTENT, colors.lightRed);
+    // }
   }
 
   toggleTheme = () => {
