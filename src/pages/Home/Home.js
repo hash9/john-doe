@@ -64,79 +64,78 @@ class Home extends PureComponent {
     return (
       <ThemeContext.Consumer>
         {theme => {
-          // const { body, link, mainTitle, mainDesc, ring } = theme.config;
+          const { body, link, mainTitle, mainDesc, ring } = theme.config;
           console.log(theme, 'theme');
           return (
-            <div>asdsd</div>
-            // <Page>
-            //   <Page.Body className={styles.pageHeader}>
-            //     <Toggle
-            //       checked={theme.type === DARK}
-            //       toggleTheme={this.props.toggleTheme}
-            //     />
+            <Page>
+              <Page.Body className={styles.pageHeader}>
+                <Toggle
+                  checked={theme.type === DARK}
+                  toggleTheme={this.props.toggleTheme}
+                />
 
-            //     <div>
-            //       <HeaderXL style={{ color: mainTitle }} text={'SpaceH'} />
-            //     </div>
+                <div>
+                  <HeaderXL style={{ color: mainTitle }} text={'SpaceH'} />
+                </div>
 
-            //     <div>
-            //       <Avatar
-            //         className={styles.avatar}
-            //         image={displayPicture}
-            //         size={'125px'}
-            //       />
-            //     </div>
+                <div>
+                  <Avatar
+                    className={styles.avatar}
+                    image={displayPicture}
+                    size={'125px'}
+                  />
+                </div>
 
-            //     <div className={styles.title}>
-            //       <HeaderM text={'Harshit Prajapati'} color={colors.lightRed} />
-            //     </div>
+                <div className={styles.title}>
+                  <HeaderM text={'Harshit Prajapati'} color={colors.lightRed} />
+                </div>
 
-            //     <div className={styles.subTitle}>
-            //       <h3 style={{ color: mainDesc }}>{SHORT_BLOG_DESCRIPTION}</h3>
-            //     </div>
+                <div className={styles.subTitle}>
+                  <h3 style={{ color: mainDesc }}>{SHORT_BLOG_DESCRIPTION}</h3>
+                </div>
 
-            //     <div className={styles.links}>
-            //       <SocialLink />
-            //     </div>
+                <div className={styles.links}>
+                  <SocialLink />
+                </div>
 
-            //     <div className={styles.navContainer}>
-            //       <h2
-            //         className={styles.navCredits}
-            //         style={{ color: link }}
-            //         onClick={this.onCredits}
-            //       >
-            //         {ROUTES.CREDITS}
-            //       </h2>
-            //       <h2
-            //         className={styles.navResume}
-            //         style={{ color: link }}
-            //         onClick={this.onNavigateToInfo}
-            //       >
-            //         {ROUTES.RESUME}
-            //       </h2>
-            //     </div>
+                <div className={styles.navContainer}>
+                  <h2
+                    className={styles.navCredits}
+                    style={{ color: link }}
+                    onClick={this.onCredits}
+                  >
+                    {ROUTES.CREDITS}
+                  </h2>
+                  <h2
+                    className={styles.navResume}
+                    style={{ color: link }}
+                    onClick={this.onNavigateToInfo}
+                  >
+                    {ROUTES.RESUME}
+                  </h2>
+                </div>
 
-            //     <div
-            //       className={styles.footer}
-            //       style={{ backgroundColor: body }}
-            //     >
-            //       <div className={styles.button} style={{ border: ring }} />
+                <div
+                  className={styles.footer}
+                  style={{ backgroundColor: body }}
+                >
+                  <div className={styles.button} style={{ border: ring }} />
 
-            //       <div
-            //         style={{ backgroundColor: body }}
-            //         className={styles.container}
-            //       >
-            //         <div className={styles.cont}>
-            //           <ListItemComponent
-            //             items={postItems}
-            //             onClickItem={this.onPostSelect}
-            //             size={this.mediaSize}
-            //           />
-            //         </div>
-            //       </div>
-            //     </div>
-            //   </Page.Body>
-            // </Page>
+                  <div
+                    style={{ backgroundColor: body }}
+                    className={styles.container}
+                  >
+                    <div className={styles.cont}>
+                      <ListItemComponent
+                        items={postItems}
+                        onClickItem={this.onPostSelect}
+                        size={this.mediaSize}
+                      />
+                    </div>
+                  </div>
+                </div>
+              </Page.Body>
+            </Page>
           );
         }}
       </ThemeContext.Consumer>
