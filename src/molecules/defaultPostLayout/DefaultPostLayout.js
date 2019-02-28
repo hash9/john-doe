@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Disqus from 'disqus-react';
+// import Disqus from 'disqus-react';
 import Page from '../pageComponent/PageComponent';
 import Avatar from '../../atoms/avatar';
 import HeaderR from '../../atoms/headerR';
@@ -9,10 +9,11 @@ import Anchor from '../../atoms/anchor';
 import styles from './defaultPostLayout.module.scss';
 import ThemeContext from '../../themes/ThemeContext';
 import { SHORT_BLOG_DESCRIPTION } from '../../themes/strings';
+import Disqus from '../disqus/disqus';
 
 const displayPicture = require('../../assets/me.jpg');
 const EMPTY_OBJECT = {};
-const disqusShortname = 'space-h';
+// const disqusShortname = 'space-h';
 
 const mobileQuery = window.matchMedia('(max-width: 768px)');
 const tabletQuery = window.matchMedia('(max-width: 1280px)');
@@ -33,12 +34,11 @@ class DefaultPostLayout extends Component {
   render() {
     const { postTitle, postDate, mainContent, handleBlogName } = this.props;
     const { state, pathname } = this.props.location;
-    const disqusConfig = {
-      url: pathname,
-      identifier: state.id,
-      title: state.title,
-    };
-    console.log(disqusConfig, 'props');
+    // const disqusConfig = {
+    //   url: pathname,
+    //   identifier: state.id,
+    //   title: state.title,
+    // };
     return (
       <ThemeContext.Consumer>
         {theme => {
@@ -97,10 +97,11 @@ class DefaultPostLayout extends Component {
                       </div>
                     </div>
                   </div>
-                  <Disqus.DiscussionEmbed
+                  {/* <Disqus.DiscussionEmbed
                     shortname={disqusShortname}
                     config={disqusConfig}
-                  />
+                  /> */}
+                  <Disqus identifier={pathname} title={state.title} />
                 </footer>
               </Page.Footer>
             </Page>

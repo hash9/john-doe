@@ -29,7 +29,6 @@ class Home extends PureComponent {
             subtitle: item.subtitle,
           },
         });
-        console.log(this.props.history, 'history');
         break;
       case 1:
         this.props.history.push({

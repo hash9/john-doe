@@ -4,6 +4,7 @@
   "description": "spaceh - personal blog",
   "author": "Harshit Prajapati",
   "private": true,
+  "homepage": "https://spaceh.io",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -12,7 +13,6 @@
     "lint": "./node_modules/.bin/eslint --ext .js,.jsx --ignore-pattern public .",
     "prettify": "find src -name '*.js' | xargs prettier --write"
   },
-  "homepage": ".",
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
