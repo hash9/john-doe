@@ -12,6 +12,7 @@ import { SHORT_BLOG_DESCRIPTION } from '../../themes/strings';
 
 const displayPicture = require('../../assets/me.jpg');
 const EMPTY_OBJECT = {};
+const disqusShortname = 'space-h';
 
 const mobileQuery = window.matchMedia('(max-width: 768px)');
 const tabletQuery = window.matchMedia('(max-width: 1280px)');
@@ -30,7 +31,6 @@ class DefaultPostLayout extends Component {
   };
 
   render() {
-    const disqusShortname = 'space-h';
     const { postTitle, postDate, mainContent, handleBlogName } = this.props;
     const { state, pathname } = this.props.location;
     const disqusConfig = {
@@ -75,6 +75,7 @@ class DefaultPostLayout extends Component {
               <Page.Footer className={styles.dPageFooter}>
                 <footer>
                   <HeaderR text={'SpaceH'} onClick={handleBlogName} />
+
                   <div className={styles.footerMainContainer}>
                     <div className={styles.footerLeftContainer}>
                       <Avatar image={displayPicture} size={'60px'} />
@@ -85,7 +86,7 @@ class DefaultPostLayout extends Component {
                         <p style={{ color: content }}>
                           Personal Blog by{' '}
                           <Anchor
-                            href={''}
+                            href={'https://github.com/hash9'}
                             style={{ color: link }}
                             text={'Harshit Prajapati'}
                           />

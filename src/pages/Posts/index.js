@@ -1,3 +1,4 @@
 import NullUndefinedNotdefined from './null-undefined-&-notdefined';
+import ChecqDisqus from './checq-disqus';
 
-export { NullUndefinedNotdefined };
+export { NullUndefinedNotdefined, ChecqDisqus };

@@ -32,6 +32,15 @@ class Home extends PureComponent {
         console.log(this.props.history, 'history');
         break;
       case 1:
+        this.props.history.push({
+          pathname: '/checq-disqus',
+          state: {
+            id: item.value,
+            title: item.title,
+            date: item.date,
+            subtitle: item.subtitle,
+          },
+        });
         break;
 
       default:
