@@ -9,4 +9,6 @@ export const ROUTES = {
   RESUME: 'Resume',
 };
 
+export const LOCAL_HOST = 'localhost';
+
 export const SHORT_BLOG_DESCRIPTION = 'Orbit of words around code';

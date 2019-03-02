@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
+import ReactGA from 'react-ga';
+import config from './config';
 import ThemeContext, { themeConfig } from './themes/ThemeContext';
 import * as colors from './themes/colors';
 import { LIGHT, DARK, META, MODE, CONTENT } from './themes/strings';
 import Home from './pages/Home/Home';
 import Resume from './pages/Resume/Resume';
+import withTracker from './config/withTracker';
 import { NullUndefinedNotdefined, ChecqDisqus } from './pages/Posts';
 
 class App extends Component {
@@ -12,10 +15,14 @@ class App extends Component {
     super(props);
     this.state = {
       theme: LIGHT,
+      configs: [config.GA_CONFIG],
     };
   }
 
   componentDidMount() {
+    //Initialize Google analytics with default config
+
+    ReactGA.initialize(this.state.configs);
     // mode: maintaining the theme state on refresh
     // meta: setting the status bar colors on mobile
 
@@ -70,9 +77,12 @@ class App extends Component {
               <Route path="/resume" render={() => <Resume />} />
               <Route
                 path="/null-undefined-and-notdefined"
-                component={NullUndefinedNotdefined}
+                component={withTracker(NullUndefinedNotdefined)}
               />
-              <Route path="/checq-disqus" component={ChecqDisqus} />
+              <Route
+                path="/checq-disqus"
+                component={withTracker(ChecqDisqus)}
+              />
             </div>
           </BrowserRouter>
         </div>
