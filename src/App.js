@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import ReactGA from 'react-ga';
 import config from './config';
 import ThemeContext, { themeConfig } from './themes/ThemeContext';
@@ -9,6 +9,7 @@ import Home from './pages/Home/Home';
 import Resume from './pages/Resume/Resume';
 import withTracker from './config/withTracker';
 import { NullUndefinedNotdefined, ChecqDisqus } from './pages/Posts';
+import NotFoundPage from './pages/404';
 
 class App extends Component {
   constructor(props) {
@@ -69,20 +70,23 @@ class App extends Component {
         <div>
           <BrowserRouter>
             <div>
-              <Route
-                path="/"
-                exact
-                render={() => <Home toggleTheme={this.toggleTheme} />}
-              />
-              <Route path="/resume" render={() => <Resume />} />
-              <Route
-                path="/null-undefined-and-notdefined"
-                component={withTracker(NullUndefinedNotdefined)}
-              />
-              <Route
-                path="/checq-disqus"
-                component={withTracker(ChecqDisqus)}
-              />
+              <Switch>
+                <Route
+                  path="/"
+                  exact
+                  render={() => <Home toggleTheme={this.toggleTheme} />}
+                />
+                <Route path="/resume" render={() => <Resume />} />
+                <Route
+                  path="/null-undefined-and-notdefined"
+                  component={withTracker(NullUndefinedNotdefined)}
+                />
+                <Route
+                  path="/checq-disqus"
+                  component={withTracker(ChecqDisqus)}
+                />
+                <Route path="*" component={withTracker(NotFoundPage)} />
+              </Switch>
             </div>
           </BrowserRouter>
         </div>
