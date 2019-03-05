@@ -62,7 +62,9 @@ class Home extends PureComponent {
     return size;
   };
 
-  onCredits = () => {};
+  onCredits = () => {
+    this.props.history.push('/credits');
+  };
 
   onNavigateToInfo = () => {
     this.props.history.push('/resume');

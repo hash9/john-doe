@@ -1,0 +1,42 @@
+.cont {
+  position: relative;
+  // border:pink 1px solid;
+  width: 40%;
+  left: 30%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.cIcon {
+  width: 50px;
+  height: 50px;
+  fill: currentColor;
+  transition: 0.2s;
+}
+
+.cLinkBrand:hover {
+  color: #000;
+}
+.cLinkBrand:hover::after {
+  background: #000;
+}
+
+.cLink {
+  position: relative;
+  color: #bbb;
+}
+
+.cLink:not(:last-of-type) {
+  margin-right: 15px;
+}
+
+@media only screen and (max-width: 768px) {
+  .cont {
+    // border:pink 1px solid;
+    width: 95%;
+    left: 2%;
+  }
+}

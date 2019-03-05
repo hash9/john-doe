@@ -7,6 +7,7 @@ import * as colors from './themes/colors';
 import { LIGHT, DARK, META, MODE, CONTENT } from './themes/strings';
 import Home from './pages/Home/Home';
 import Resume from './pages/Resume/Resume';
+import Credits from './pages/Credits/Credits';
 import withTracker from './config/withTracker';
 import { NullUndefinedNotdefined, ChecqDisqus } from './pages/Posts';
 import NotFoundPage from './pages/404';
@@ -76,6 +77,7 @@ class App extends Component {
                   exact
                   render={() => <Home toggleTheme={this.toggleTheme} />}
                 />
+                <Route path="/credits" render={() => <Credits />} />
                 <Route path="/resume" render={() => <Resume />} />
                 <Route
                   path="/null-undefined-and-notdefined"
