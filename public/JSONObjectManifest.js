@@ -1,6 +1,6 @@
 var dynamicManifest = {
 	"name": "SpaceH",
-	"description": "React & React-native Blog",
+	"description": "Personal blog by Harshit Prajapati",
   "icons": [
     {
       "src": "favicon.ico",
