@@ -6,7 +6,7 @@ import ThemeContext from '../../../themes/ThemeContext';
 import { Emoji } from 'emoji-mart';
 import { Blockquote, Para } from '../../../atoms';
 
-class ChecqDisqus extends Component {
+class NullUndefinedNotdefined extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -93,4 +93,4 @@ domContainer.appendChild(domNode);`;
   }
 }
 
-export default ChecqDisqus;
+export default NullUndefinedNotdefined;

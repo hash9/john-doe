@@ -6,5 +6,18 @@ import HeaderL from './headerL';
 import HeaderXL from './headerXL';
 import Anchor from './anchor';
 import Toggle from './toggle';
+import Blockquote from './blockquote';
+import Para from './para';
 
-export { Avatar, Seperator, HeaderR, HeaderM, HeaderL, HeaderXL, Anchor, Toggle };
+export {
+  Avatar,
+  Seperator,
+  HeaderR,
+  HeaderM,
+  HeaderL,
+  HeaderXL,
+  Anchor,
+  Toggle,
+  Blockquote,
+  Para,
+};
