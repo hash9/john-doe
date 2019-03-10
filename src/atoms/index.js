@@ -8,6 +8,8 @@ import Anchor from './anchor';
 import Toggle from './toggle';
 import Blockquote from './blockquote';
 import Para from './para';
+import ParaHeader from './paraHeader';
+import Highlight from './highlight';
 
 export {
   Avatar,
@@ -20,4 +22,6 @@ export {
   Toggle,
   Blockquote,
   Para,
+  ParaHeader,
+  Highlight,
 };

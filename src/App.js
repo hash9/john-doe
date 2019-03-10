@@ -9,7 +9,7 @@ import Home from './pages/Home/Home';
 import Resume from './pages/Resume/Resume';
 import Credits from './pages/Credits/Credits';
 import withTracker from './config/withTracker';
-import { NullUndefinedNotdefined, ChecqDisqus } from './pages/Posts';
+import { AndThenThereWasNotDefined } from './pages/Posts';
 import NotFoundPage from './pages/404';
 
 class App extends Component {
@@ -80,12 +80,8 @@ class App extends Component {
                 <Route path="/credits" render={() => <Credits />} />
                 <Route path="/resume" render={() => <Resume />} />
                 <Route
-                  path="/null-undefined-and-notdefined"
-                  component={withTracker(NullUndefinedNotdefined)}
-                />
-                <Route
-                  path="/checq-disqus"
-                  component={withTracker(ChecqDisqus)}
+                  path="/and-then-there-was-notdefined"
+                  component={withTracker(AndThenThereWasNotDefined)}
                 />
                 <Route path="*" component={withTracker(NotFoundPage)} />
               </Switch>

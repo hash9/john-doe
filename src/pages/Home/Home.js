@@ -21,18 +21,7 @@ class Home extends PureComponent {
     switch (item.value) {
       case 0:
         this.props.history.push({
-          pathname: '/null-undefined-and-notdefined',
-          state: {
-            id: item.value,
-            title: item.title,
-            date: item.date,
-            subtitle: item.subtitle,
-          },
-        });
-        break;
-      case 1:
-        this.props.history.push({
-          pathname: '/checq-disqus',
+          pathname: '/and-then-there-was-notdefined',
           state: {
             id: item.value,
             title: item.title,
